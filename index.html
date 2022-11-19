@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+		body{
+			padding-top: 12%;
+			background-size: cover;
+			background-image: url(https://static.vecteezy.com/system/resources/previews/007/164/537/original/fingerprint-identity-sensor-data-protection-system-podium-hologram-blue-light-and-concept-free-vector.jpg)
+		}
+		#newTodo{
+			border-radius: 25px;
+			border:solid;
+			border-color:black;
+			padding: 1%;
+		}
+		#button{
+			border-radius: 25px;
+			border:solid;
+			border-color:black;
+			padding: 1%;
+		}
+		.list-type{
+		list-style: none;
+		}
+		.listitem{
+			color: white;
+			font-size: 2rem;
+		}
+	</style>
+	<script src="https://kit.fontawesome.com/2313ea907d.js" crossorigin="anonymous"></script>
+	<script type="text/javascript">
+		function todo(){
+		let newTodo=document.getElementById("newTodo").value
+		console.log(newTodo)
+		document.getElementById("newTodo").value=""
+		if(newTodo===""){
+			alert("Enter a todo")
+		}
+		else{
+			addTodo(newTodo)
+		}
+	}
+		function addTodo(newValue){
+			let ul=document.querySelector("ul")
+			console.log(ul)
+			let li=document.createElement("li")
+			li.innerHTML=`
+			<span class="listitem">${newValue}
+			</span>
+			<i class="fa-sharp fa-solid fa-rectangle-xmark"></i>`
+			li.classList.add("list-type")
+			ul.appendChild(li)
+		}
+</script>		
+</head>
+<body>
+	<center>
+	<p><input id="newTodo" placeholder="Password"/></p>
+	<button id="button" onclick="todo()">Submit</button>
+	<ul>
+	</ul>
+	</center>
+</body>
+</html>
